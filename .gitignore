@@ -1,0 +1,28 @@
+# --- SENSITIVE DATA (The most important part!) ---
+.env
+.env.local
+secrets.json
+
+# --- PYTHON VIRTUAL ENVIRONMENT ---
+venv/
+.venv/
+env/
+bin/
+Include/
+Lib/
+Scripts/
+
+# --- PYTHON CACHE (Speeds up execution, but clutters GitHub) ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- IDE SETTINGS (Personal editor configs) ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- LOGS ---
+*.log
+pip-log.txt
