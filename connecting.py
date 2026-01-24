@@ -17,7 +17,7 @@ def ask_gemini(user_message):
     # Gemini uses 'models.generate_content' instead of 'chat.completions'
     response = client.models.generate_content(
         model="gemini-flash-latest", 
-        contents=user_message,
+        contents=contents,
         config={
             "temperature": 0.7,
             "system_instruction": "You are a helpful assistant."
@@ -25,7 +25,15 @@ def ask_gemini(user_message):
     )
     return response.text
 
+contents = [
+    "What is the capital of France?",
+    "The capital of France is Paris.",
+
+]
+
+
 # Test it
-user = "do u remember i called u again what i said to you ?"
+user = "What is an interesting fact about Paris?"
+contents.append(user)
 response = ask_gemini(user)
 print(response)
