@@ -24,7 +24,7 @@ def ask_gemini(user_message):
         }
     )
     return response.text
-
+ 
 contents = [
     "What is the capital of France?",
     "The capital of France is Paris.",
