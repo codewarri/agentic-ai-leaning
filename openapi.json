@@ -1,0 +1,72 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Daily Tasks API",
+        "description": "API to retrieve daily tasks",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/tasks": {
+            "get": {
+                "tags": [
+                    "Tasks"
+                ],
+                "summary": "Get Daily Tasks",
+                "description": "Retrieve the full list of daily tasks",
+                "operationId": "get_tasks_tasks_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "$ref": "#/components/schemas/Task"
+                                    },
+                                    "type": "array",
+                                    "title": "Response Get Tasks Tasks Get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Task": {
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "title": "Id",
+                        "description": "Unique identifier for the task"
+                    },
+                    "title": {
+                        "type": "string",
+                        "title": "Title",
+                        "description": "Short title of the task"
+                    },
+                    "description": {
+                        "type": "string",
+                        "title": "Description",
+                        "description": "Detailed description of the task"
+                    },
+                    "completed": {
+                        "type": "boolean",
+                        "title": "Completed",
+                        "description": "Completion status of the task"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id",
+                    "title",
+                    "description",
+                    "completed"
+                ],
+                "title": "Task"
+            }
+        }
+    }
+}
